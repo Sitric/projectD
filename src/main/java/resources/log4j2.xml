@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="serviceLog" fileName="logs/service.log" immediateFlush="true" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="rootLog" fileName="logs/root.log" immediateFlush="true" append="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+
+        <!--<Logger name= "com.sitric.dashboard.service.DashboardService" level="debug" additivity="true">
+            &lt;!&ndash;<AppenderRef ref="Console"/>&ndash;&gt;
+            <AppenderRef ref="serviceLog" />
+        </Logger>
+
+        <Logger name= "com.sitric.dashboard.ui.DashboardUI" level="debug" additivity="true">
+            &lt;!&ndash;<AppenderRef ref="Console"/>&ndash;&gt;
+            <AppenderRef ref="serviceLog" />
+        </Logger>-->
+
+        <!-- Root Logger -->
+        <Root level="info">
+            <!--<AppenderRef ref="Console"/>-->
+            <AppenderRef ref="rootLog" />
+        </Root>
+    </Loggers>
+
+
+</Configuration>
