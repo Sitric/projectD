@@ -1,12 +1,18 @@
 package com.sitric.model;
 
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Set;
 
 /**
  * Шаг рецепта
  */
-public class RecipeStep implements Serializable {
+
+@Document(collection = "reciepeSteps")
+public class RecipeStep {
+
+    @Id
     private Long id;
     // сколько по времени длится данный шаг, в сек
     private Integer duration;

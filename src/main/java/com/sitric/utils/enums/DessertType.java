@@ -1,4 +1,4 @@
-package com.sitric.enums;
+package com.sitric.utils.enums;
 
 /**
  * Типы десертов

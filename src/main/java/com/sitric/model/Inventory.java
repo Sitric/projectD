@@ -1,11 +1,15 @@
 package com.sitric.model;
 
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Инвентарь, который требуется на конкретном шаге рецепта
  */
-public class Inventory implements Serializable {
+@Document(collection = "inventory")
+public class Inventory {
+
+    @Id
     private Long id;
     private String title;
     private String description;

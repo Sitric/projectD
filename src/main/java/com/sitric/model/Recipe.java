@@ -1,12 +1,18 @@
 package com.sitric.model;
 
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Set;
 
 /**
  * Рецепт
  */
-public class Recipe implements Serializable {
+
+@Document(collection = "reciepes")
+public class Recipe {
+
+    @Id
     private Long id;
     private Set<RecipeStep> recipeSteps;
 

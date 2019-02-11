@@ -1,11 +1,13 @@
 package com.sitric.model;
 
 
-import com.sitric.enums.DessertType;
+import com.sitric.utils.enums.DessertType;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Десерты
  */
+@Document(collection="items")
 public class Dessert extends Item{
     private DessertType dessertType;
     private Recipe recipe;

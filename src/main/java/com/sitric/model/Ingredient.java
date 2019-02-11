@@ -1,12 +1,15 @@
 package com.sitric.model;
 
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- *
  * Ингредиент - из чего состоит конкретная продукция
  */
-public class Ingredient implements Serializable {
+@Document(collection = "ingredients")
+public class Ingredient {
+
+    @Id
     private Long id;
     private String title;
     private String description;

@@ -1,14 +1,18 @@
 package com.sitric.model;
 
-import com.sitric.enums.MeasureType;
+import com.sitric.utils.enums.MeasureType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Базовая единица продаваемой продукции
  */
-public abstract class Item implements Serializable {
+@Document(collection="items")
+public abstract class Item{
+
+    @Id
     private Long id;
     private String title;
     private String description;
